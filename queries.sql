@@ -194,4 +194,36 @@ BEGIN
 
 END; 
 
+SELECT v.numero_serie, v.marque, v.modele
+FROM vehicule v
+JOIN station s ON v.id_station = s.id_station
+WHERE s.ville = 'Lyon'
+AND v.statut = 'disponible';
+
+SELECT s.ville, COUNT(v.id_vehicule) AS nb_vehicules
+FROM station s
+LEFT JOIN vehicule v ON v.id_station = s.id_station
+GROUP BY s.ville
+ORDER BY nb_vehicules DESC;
+
+SELECT
+    s.ville,
+    COUNT(DISTINCT v.id_vehicule) AS nb_vehicules,
+    COUNT(r.id_reservation) AS nb_reservations
+FROM station s
+JOIN vehicule v ON v.id_station = s.id_station
+LEFT JOIN reservation r ON r.id_vehicule = v.id_vehicule
+GROUP BY s.ville
+ORDER BY nb_reservations DESC;
+
+SELECT
+    s.ville,
+    COUNT(*) AS nb_vehicules_disponibles
+FROM vehicule v
+JOIN station s ON s.id_station = v.id_station
+WHERE v.etat = 'Disponible'
+GROUP BY s.ville
+ORDER BY nb_vehicules_disponibles DESC;
+
+
 $$ LANGUAGE plpgsql; 
