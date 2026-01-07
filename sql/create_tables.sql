@@ -1,14 +1,10 @@
-
 --
 -- PostgreSQL database dump
 --
-
 \restrict FOzOPayPhz1E2JHxLkwu4QDCRmVc7ffX1gqpsPh8rKVB7a3dmLVjTcCs3XI2Ra0
 
 -- Dumped from database version 18.1 (Postgres.app)
 -- Dumped by pg_dump version 18.0
-
--- Started on 2026-01-07 16:20:29 CET
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -67,7 +63,6 @@ ALTER SEQUENCE public.borne_recharge_id_borne_seq OWNER TO postgres;
 --
 
 ALTER SEQUENCE public.borne_recharge_id_borne_seq OWNED BY public.borne_recharge.id_borne;
-
 
 --
 -- TOC entry 226 (class 1259 OID 18498)
@@ -160,8 +155,6 @@ ALTER SEQUENCE public.location_id_location_seq OWNER TO postgres;
 --
 
 ALTER SEQUENCE public.location_id_location_seq OWNED BY public.location.id_location;
-
-
 --
 -- TOC entry 238 (class 1259 OID 18550)
 -- Name: maintenance; Type: TABLE; Schema: public; Owner: postgres
